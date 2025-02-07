@@ -135,7 +135,9 @@ export default function Index () {
     } catch (error) {
       console.error('SSKS Password tests FAILED')
       console.error(error)
+      console.error(error.stack)
       setHasErrorSSKSPassword(error.toString())
+      setHasFinishedSSKSPassword(true)
     }
   }
 
@@ -293,7 +295,9 @@ export default function Index () {
     } catch (error) {
       console.error('SSKS TMR tests FAILED')
       console.error(error)
+      console.error(error.stack)
       setHasErrorSSKSTMR(error.toString())
+      setHasFinishedSSKSTMR(true)
     }
   }
 
@@ -469,7 +473,7 @@ export default function Index () {
       // Create a stream that will read the file: `clearFileStream`.
       const clearFileStream = readFileStream(clearFilepath)
       // Pipe it to a stream that will encrypt the file: `encryptStream`. (The sdk.encryptFile do the piping)
-      const encryptStream = await es1SDK1.encryptFile(clearFileStream, 'test.txt', { progressCallback: console.log, fileSize: randBuff.length })
+      const encryptStream = await es1SDK1.encryptFile(clearFileStream, { filename: 'test.txt', progressCallback: console.log, fileSize: randBuff.length })
       // Pipe `encryptStream` to a stream that write the encrypted file on disk.
       // Then we await the end of stream.
       await streamPromise.pipeline(encryptStream, writeFileStream(encryptedFilePath))
@@ -741,7 +745,9 @@ export default function Index () {
     } catch (error) {
       console.error('SDK tests FAILED')
       console.error(error)
+      console.error(error.stack)
       setHasErrorSDK(error.toString())
+      setHasFinishedSDK(true)
     }
   }
 
