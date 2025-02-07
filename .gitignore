@@ -8,4 +8,4 @@ expo-env.d.ts
 app/seald
 node_modules
 .expo
-
+.idea
