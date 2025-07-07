@@ -14,9 +14,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@seald-io/sdk": "0.32.0",
-    "@seald-io/sdk-plugin-ssks-2mr": "0.32.0",
-    "@seald-io/sdk-plugin-ssks-password": "0.32.0",
+    "@seald-io/sdk": "0.33.0",
+    "@seald-io/sdk-plugin-ssks-2mr": "0.33.0",
+    "@seald-io/sdk-plugin-ssks-password": "0.33.0",
     "@babel/plugin-transform-private-methods": "^7.25.9",
     "@craftzdog/react-native-buffer": "^6.0.5",
     "@expo/vector-icons": "^14.0.4",
